@@ -1,0 +1,260 @@
+\documentclass[border=0.50001bp,convert={convertexe={imgconvert},outext=.png}]{standalone}
+
+% Korrekte Darstellung der Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{external}
+\usepackage{filecontents} 
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+\begin{filecontents*}{Data.dat}
+${ALGORITHM_RESULTS}
+\end{filecontents*}
+
+\pgfplotsset{     
+	discard if not/.style 2 args={         
+		x filter/.code={             
+			\edef\tempa{\thisrow{#1}}             
+			\edef\tempb{#2}             
+			\ifx\tempa\tempb            
+			\else                 
+				\def\pgfmathresult{inf}             
+			\fi         
+		}     
+	} 
+}
+
+
+\pgfplotscreateplotcyclelist{my black white}{%
+	solid, every mark/.append style={solid, fill=gray}, mark=*\\%
+	dotted, every mark/.append style={solid, fill=gray}, mark=square*\\%
+	densely dotted, every mark/.append style={solid, fill=gray}, mark=otimes*\\%
+	loosely dotted, every mark/.append style={solid, fill=gray}, mark=triangle*\\%
+	dashed, every mark/.append style={solid, fill=gray},mark=diamond*\\%
+	loosely dashed, every mark/.append style={solid, fill=gray},mark=*\\%
+	densely dashed, every mark/.append style={solid, fill=gray},mark=square*\\%
+	dashdotted, every mark/.append style={solid, fill=gray},mark=otimes*\\%
+	dashdotdotted, every mark/.append style={solid},mark=star\\%
+	densely dashdotted,every mark/.append style={solid, fill=gray},mark=diamond*\\%	
+	dashed, every mark/.append style={solid, fill=white}, mark=*\\%
+	loosely dashed, every mark/.append style={solid, fill=white}, mark=square*\\%
+	densely dashed, every mark/.append style={solid, fill=white}, mark=otimes*\\%
+	dashdotted, every mark/.append style={solid, fill=white}, mark=triangle*\\%
+	solid, every mark/.append style={solid, fill=white},mark=diamond*\\%
+	dotted, every mark/.append style={solid, fill=white},mark=*\\%
+	densely dotted, every mark/.append style={solid, fill=white},mark=square*\\%
+	loosely dotted, every mark/.append style={solid, fill=white},mark=otimes*\\%
+	densely dashdotted, every mark/.append style={solid},mark=star\\%
+	dashdotdotted,every mark/.append style={solid, fill=white},mark=diamond*\\%
+}
+
+\begin{axis}[
+	width=\textwidth,
+	xlabel=${xDesc},
+	ylabel=${yDesc},
+	xtick=data,
+	ymin=0,
+	%%title=${Title},
+	legend style={
+		at={(0.5,-0.3)},
+		anchor=north,
+		legend columns=3
+	},
+	cycle list name=my black white,
+	scaled ticks=false
+]
+
+
+\addplot table [
+	discard if not={Algorithm}{${Algo1}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+
+\addplot table [
+	discard if not={Algorithm}{${Algo2}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo3}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo4}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo5}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo6}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo7}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo8}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+
+\addplot table [
+	discard if not={Algorithm}{${Algo9}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo10}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo11}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo12}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo13}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo14}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo15}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo16}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo17}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo18}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+
+\addplot table [
+	discard if not={Algorithm}{${Algo19}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\addplot table [
+	discard if not={Algorithm}{${Algo20}},
+	x=${Cat},
+	y expr={\thisrowno{3}/1000000000},
+	meta=Algorithm,
+] {Data.dat};
+
+\legend{
+	${Algo1},
+	${Algo2},
+	${Algo3},
+	${Algo4},
+	${Algo5},
+	${Algo6},
+	${Algo7},
+	${Algo8},
+	${Algo9},
+	${Algo10},
+	${Algo11},
+	${Algo12},
+	${Algo13},
+	${Algo14},
+	${Algo15},
+	${Algo16},
+	${Algo17},
+	${Algo18},
+	${Algo19},
+	${Algo20}
+}
+\end{axis}
+
+\begin{axis}[yshift=-1.5cm,
+      xlabel={Skylinegröße des Testfalls},
+      width=\textwidth,
+      hide y axis,
+      axis lines*=left,
+      xmin=0,
+      xmax=9,
+      xticklabels={{ }}
+]
+\addplot[draw=none]{1};
+\end{axis}
+
+\end{tikzpicture}
+
+\end{document}

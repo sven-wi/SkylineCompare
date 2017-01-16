@@ -1,0 +1,15 @@
+Filename: data.txt, data2.txt
+Description: NBA und House Database
+From: Park, Sungwoo and Kim, Taekyung and Park, Jonghyun and Kim, Jinha and Im, Hyeonseung
+Paper: "Parallel skyline computation on multicore architectures"
+
+Filename: data4.txt
+Description: Train Cost and driving Time Example File
+From: Wiemann, Sven
+
+Package: texTemplates
+Description: Templates for Tex Files, created by the Framework. Patterns in these Templates are replaced by actual Test-Data from the Test-Results. There are different Templates for different Diagram Types.
+From: Wiemann, Sven
+
+Package: output
+Description: Result-Files are saved here
