@@ -24,7 +24,6 @@ import framework.Result;
 import framework.SkylineAlgorithm;
 import framework.TupleList;
 import inputHandling.InputHandler;
-import pSkyline.PSkyline2;
 
 /**
  * Calls RepeatTest on several Algorithms

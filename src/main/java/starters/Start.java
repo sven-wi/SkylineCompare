@@ -21,7 +21,6 @@ import exceptions.NoAlgorithmsSetException;
 import inputHandling.DataGenAntiCorr;
 import inputHandling.DataGenAntiCorrGauss;
 import inputHandling.InputHandler;
-import pSkyline.PSkyline2;
 import tests.DifferentDatasizeBenchmark;
 import tests.DifferentDimensionsBenchmark;
 
@@ -63,7 +62,6 @@ public class Start {
 			test2.algorithms.clear(); // Customize the Algorithms used in this Test
 			// Add new Algorithms here
 			// Example: test2.algorithms.add(new SkylineAlgorithm());
-			test2.algorithms.add(new PSkyline2());
 			if(test2.algorithms.size() == 0)
 				throw new NoAlgorithmsSetException();
 
